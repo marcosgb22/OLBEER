@@ -1,9 +1,24 @@
 
-.detail{
+
+.detail {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    
-}
+  }
+  
+  .detail > div {
+    margin-right: 20px; /* Ajusta el margen según sea necesario */
+  }
+  
+  .detail img {
+    max-width: 850px; /* Ajusta el tamaño máximo de la imagen según sea necesario */
+    height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
+  }
+  
+  .detail h1 {
+    font-size: 1.5em; /* Ajusta el tamaño de la fuente según sea necesario */
+  }
+  
+  .detail p {
+    margin: 5px 0; /* Ajusta el margen según sea necesario */
+  }

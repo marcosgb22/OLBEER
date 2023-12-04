@@ -1,12 +1,24 @@
-import React from 'react';
-import { BsFillCartFill } from "react-icons/bs";
+import React, { useContext } from "react";
+import { CiBeerMugFull } from "react-icons/ci";
+import { Link } from "react-router-dom";
 import './CartWidget.css';
+import CartContext from '../../Context/CartContext'
+
 
 const CartWidget = () => {
+
+    const {cantidadTotal} = useContext(CartContext)
+
     return (
         <div className='cart'>
-            <BsFillCartFill/>
-            <p>1</p>
+            <Link to="/cartcanvas">
+            <div className='cart-icon-container'>
+                
+                <CiBeerMugFull size={50}/>
+                
+            </div>
+            </Link>
+            <p className='cart-count' style={{color : 'white'}}>{cantidadTotal}</p>
         </div>
     );
 };

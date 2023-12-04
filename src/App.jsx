@@ -7,15 +7,20 @@ import Look from './components/Look/Look';
 import Contactos from './components/Contactos/Contactos';
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import ItemContainerDetail from './components/ItemListConteinerDetail/ItemListConteinerDetail';
+import CartCanvas from './components/CartCanvas/CartCanvas'
 import ItemListContainerCategory from './components/ItemListConteinerCategory/ItemListConteinerCategory';
 //import {getFirestore,doc,getDoc, getDocsFromServer} from "firebase/firestore"
 import {getFirestore,collection,getDocs,query,where} from "firebase/firestore"
 import { useEffect, useState } from 'react';
+import Cart from './components/Cart/Cart' 
+import { CartProvider } from './Context/CartContext';
+import  {UserProvider} from './Context/UserContext'
+
+
+
+
 
 function App() {
-
-
-
 
   //  const [product,setProduct] = useState(null)
   //  useEffect(()=> {
@@ -28,29 +33,6 @@ function App() {
   //    })
   //  },[])
   //  console.log(product)
-
-
-    const [product,setProduct] = useState([])
-    useEffect(()=> {
-      const db = getFirestore()
-      const collectionRef = collection(db,"productos")
-
-      const q = query(
-        collection(db,"productos"),
-        where("precio",">",95)
-      )
-
-
-      getDocs(collectionRef).then((snapshot) => {
-
-          setProduct(snapshot.docs.map((doc)=>(
-            {id: doc.id,...doc.data()}
-          )))
-      })
-    },[])
-    console.log(product)
-
-
     const greet = "Bienvenidos a Öl Beer";
 
 
@@ -59,18 +41,30 @@ function App() {
 
 
       <BrowserRouter>
+        <CartProvider>
+        <UserProvider>
+
         <NavBar/>
         <Routes>
-          <Route path='/' element={<ItemListContainer/>}/>
+          <Route path='/' element={<ItemListContainer mensaje={greet}/>}/>
+
+          <Route path='/:categoryId' element={<ItemListContainer/>}/>
             
           <Route path='/look' element={<Look/>}/>
 
           <Route path='/contactos' element={<Contactos/>}/>
 
+          <Route path='/cart' element={<Cart/>}/>
+
+          <Route path='/cartcanvas' element={<CartCanvas/>}/>
+
           <Route path='/item/:idProduct' element={<ItemContainerDetail/>}/>
 
 
         </Routes>
+        </UserProvider>
+        </CartProvider>
+        
       </BrowserRouter>
 
     </>

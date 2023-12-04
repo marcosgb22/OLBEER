@@ -2,3 +2,15 @@
     display: flex;
 
 }
+.cart-icon-container {
+    position: relative;
+    color: rgb(163, 163, 163);
+}
+
+.cart-count {
+    position: absolute;
+    margin: auto;
+    bottom: 0;
+    /*background-color: red; /* Solo para resaltar la posición, puedes eliminar esto en tu código real */
+    padding: 4px; /* Agrega algún espacio alrededor del número */
+}
