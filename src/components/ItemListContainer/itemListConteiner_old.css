@@ -32,11 +32,7 @@
 .itemListWrapper .itemCard:nth-child(3n) {
   margin-right: 0;
 }
-ChatGPT
-Para agregar separación entre los objetos, puedes modificar los estilos de la clase .itemCard agregando márgenes. Aquí hay una versión actualizada de tus estilos con un espacio adicional entre los elementos:
 
-css
-Copy code
 .listContainer {
   text-align: center;
 }
