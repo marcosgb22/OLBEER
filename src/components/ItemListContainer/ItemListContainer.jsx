@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './itemListConteiner.css'
+import './itemListConteiner_old.css'
 import ItemList from "../ItemList/Itemlist.jsx";
 import SpinnerLoading from '../Spinner/Spinner.jsx';
 import Footer from '../Footer/Footer.jsx';
@@ -8,11 +8,13 @@ import { collection, getDocs,getFirestore,query,where } from 'firebase/firestore
 
 
 
-const ItemListContainer = ({mensaje}) => {
+const ItemListContainer = () => {
 
     const [products,setProducts] = useState([])
     const {categoryId} = useParams()
     const [loading, setLoading] = useState();
+
+    const mensaje = categoryId ? `Tipo: ${categoryId}` : "Bienvenidos a Öl Beer";
 
     useEffect(() => {
         setLoading(true);
@@ -50,7 +52,9 @@ const ItemListContainer = ({mensaje}) => {
 
           {(products.length)
             ?
+            <div className='itemListWrapper'>
             <ItemList list={products}/>
+            </div>
             :
             <SpinnerLoading/>
 

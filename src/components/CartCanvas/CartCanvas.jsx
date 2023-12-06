@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Cart from '../Cart/Cart'
+import ItemListContainer from '../ItemListContainer/ItemListContainer';
 
 function Example() {
   const [show, setShow] = useState(false);
@@ -16,6 +17,7 @@ function Example() {
 
   return (
     <>
+      <ItemListContainer/>  
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Reserva</Offcanvas.Title>

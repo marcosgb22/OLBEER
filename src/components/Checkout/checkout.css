@@ -1,0 +1,32 @@
+/* Checkout.css */
+
+
+.container_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh; /* Adjust the height as needed */
+  }
+  
+  form {
+    width: 300px; /* Adjust the width as needed */
+    margin-top: 20px;
+  }
+  
+  /* Style for form fields */
+  form div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  label {
+    margin-bottom: 5px;
+  }
+  
+  input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }

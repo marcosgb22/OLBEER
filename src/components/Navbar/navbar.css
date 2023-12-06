@@ -1,3 +1,22 @@
-.titulo{
-    color: red;
-}
+/* Agrega estos estilos a tu hoja de estilo (o crea un archivo separado si prefieres) */
+.logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto; /* Empuja la imagen hacia la derecha */
+    z-index: 2;
+  }
+  
+  .logo-img {
+    position: absolute;
+
+    /* Estilos para tu imagen, ajusta según sea necesario */
+    width: 200px; /* Ajusta el ancho según tu necesidad */
+    height: auto; /* Esto asegura que la altura se ajuste proporcionalmente */
+    z-index: 3;
+  }
