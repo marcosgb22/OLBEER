@@ -1,6 +1,22 @@
-.error{
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh; /* Ocupa toda la altura de la pantalla */
+}
+
+.error {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+}
+
+.p_error {
+    font-size: 2em; /* Ajusta el tamaño del título según tus necesidades */
+}
+
+.logo-error-img {
+    width: 100%; /* Hace que la imagen ocupe el 100% del contenedor */
+    max-width: 400px; /* Establece un ancho máximo para la imagen */
+    height: auto; /* Mantiene la proporción original de la imagen */
 }

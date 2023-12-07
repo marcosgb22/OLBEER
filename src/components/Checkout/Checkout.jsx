@@ -10,6 +10,7 @@ const Checkout = () => {
     const [apellido, setApellido] = useState("")
     const [telefono, setTelefono] = useState("")
     const [email, setEmail] = useState("")
+    const [confirmarEmail, setConfirmarEmail] = useState("")
     const [error, setError] = useState("")
     const [orderId, setOrderId] = useState("")
 
@@ -22,6 +23,9 @@ const Checkout = () => {
 
         if(!nombre || !apellido || !telefono || !email){
             setError("Completar los campos requeridos")
+        }
+        if(email !== confirmarEmail){
+            setError("Error al confirmar email")
         }
 
         //Creamos instancia de bases de datos
@@ -46,6 +50,10 @@ const Checkout = () => {
             telefono,
             email
         }
+
+        if(error){
+
+        }else{
 
         //generamos orden y reduccion de stock
         Promise.all(
@@ -77,8 +85,10 @@ const Checkout = () => {
         .catch((error)=>{
             setError("No se puede actualizar el stock -- intentelo mas tarde")
         })
+    }
 
     }
+
 
     return (
         <div className="container_form">
@@ -112,6 +122,10 @@ const Checkout = () => {
             <div>
                 <label htmlFor="">Email</label>
                 <input type="email" onChange={(e)=> setEmail(e.target.value)}/>
+            </div>
+            <div>
+                <label htmlFor="">Confirmar Email</label>
+                <input type="email" onChange={(e)=> setConfirmarEmail(e.target.value)}/>
             </div>
 
             {error && <p style={{color: "red"}}>{error}</p>}

@@ -1,14 +1,9 @@
-import React, { useContext } from 'react';
-import UserContext from '../../Context/UserContext'
+import React from 'react';
 
 const Look = () => {
 
-    const { username , toggleTheme, theme } = useContext(UserContext);
-
     return (
-        <div style={{background: theme }} >
-            <h1>Welcome, {username}!</h1>
-            <button onClick={toggleTheme}>Toggle Theme</button>
+        <div>
             <h1>Look 1</h1>
         </div>
     );

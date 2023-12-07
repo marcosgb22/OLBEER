@@ -11,7 +11,7 @@ import "./navbar.css"
 function NavBar() {
   return (
     <>
-    <img src="https://i.ibb.co/PMJjywc/viki-logo.png" alt="Logo" className="logo-img" />
+    <img src="https://i.ibb.co/PDFv7Xd/un-feliz-vikingo.png" alt="Logo" className="logo-img" />
     <Navbar expand="lg" className="body-tertiary" bg="dark" variant={"dark"}>
       <Container>
 

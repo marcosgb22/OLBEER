@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700');
 
 .listContainer {
   text-align: center;
 }
 
 .mensajePrincipal {
-  margin: 20px;
-  font-size: xx-large;
+  margin: auto;
+  font-size: medium;
+  font-family: 'Amatic SC', sans-serif;
+
 }
 
 .itemListWrapper {
